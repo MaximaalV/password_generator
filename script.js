@@ -16,6 +16,36 @@ function generateRandomPassword() {
     return randomPassword
 }
 
-const generatedPasswordOne = generateRandomPassword()
+document.addEventListener('DOMContentLoaded', function() {
+    const generateButton = document.querySelector('button');
+    const passwordOne = document.getElementById('first');
+    const passwordTwo = document.getElementById('second');
 
-console.log("Here is a random password: ", generatedPasswordOne)
+    generateButton.addEventListener('click', function() {
+        const generatedPasswordOne = generateRandomPassword();
+        const generatedPasswordTwo = generateRandomPassword();
+
+        passwordOne.textContent = generatedPasswordOne;
+        passwordTwo.textContent = generatedPasswordTwo;
+    });
+});
+
+function copyToClipboard(text) {
+    const textField = document.createElement('textarea');
+    textField.innerText = text;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand('copy');
+    textField.remove();
+}
+
+// Add event listeners to the password elements for copying
+passwordOne.addEventListener('click', function() {
+    copyToClipboard(passwordOne.textContent);
+    alert('Password 1 copied to clipboard!');
+});
+
+passwordTwo.addEventListener('click', function() {
+    copyToClipboard(passwordTwo.textContent);
+    alert('Password 2 copied to clipboard!');
+});

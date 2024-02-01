@@ -72,6 +72,7 @@ body {
     border: none;
     cursor: pointer;
     margin-bottom: 40px;
+    font-size: 16px;
 }
 
 .line {
@@ -98,6 +99,7 @@ body {
     font-weight: 500;
     color: var(--color-lightgreen);
     border-radius: 6px;
+    cursor: pointer;
 }
 
 #second {
@@ -111,4 +113,5 @@ body {
     font-weight: 500;
     color: var(--color-lightgreen);
     border-radius: 6px;
+    cursor: pointer;
 }
