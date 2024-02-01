@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+   // Function to copy password to clipboard
 function copyToClipboard(text) {
     const textField = document.createElement('textarea');
     textField.innerText = text;
